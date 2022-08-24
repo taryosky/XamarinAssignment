@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AssignmentApp.ViewModels"
+    x:Class="AssignmentApp.Pages.UserDetailsPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:UserDetailsPageVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+      <Grid BackgroundColor="White" BindingContext="{StaticResource vm}">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+         </Grid.RowDefinitions>
+
+         <Image Grid.Row="0" Source="{Binding User.ProfilePic}" VerticalOptions="Start" HeightRequest="450" Aspect="Fill"/>
+
+         <StackLayout Grid.Row="1" BackgroundColor="White" VerticalOptions="End">
+            <Frame CornerRadius="35" Style="{StaticResource stlMainFrame}" >
+               <Grid Padding="25,10,25,0" RowSpacing="0">
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding User.Name}" FontAttributes="Bold" FontSize="20"/>
+                  <Label Grid.Row="1" Grid.Column="0" TextColor="#a5a2a2"  Grid.ColumnSpan="3" Padding="0,10,0,0" FontSize="16">
+                     <Label.FormattedText>
+                        <FormattedString>
+                           <Span Text="Address: " FontAttributes="Bold" />
+                           <Span Text="{Binding User.Address}"  />
+                        </FormattedString>
+                     </Label.FormattedText>
+                  </Label>
+                  <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,10,0,0" FontSize="16">
+                     <Label.FormattedText>
+                        <FormattedString>
+                           <Span Text="Mobile: " FontAttributes="Bold" />
+                           <Span Text="{Binding User.Mobile}"  />
+                        </FormattedString>
+                     </Label.FormattedText>
+                  </Label>
+                  <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,10,5,10" FontSize="16">
+                     <Label.FormattedText>
+                        <FormattedString>
+                           <Span Text="Sex: " FontAttributes="Bold" />
+                           <Span Text="{Binding User.Sex}"  />
+                        </FormattedString>
+                     </Label.FormattedText>
+                  </Label>
+               </Grid>
+            </Frame>
+         </StackLayout>
+
+      </Grid>
+   </ContentPage.Content>
+</ContentPage>
+

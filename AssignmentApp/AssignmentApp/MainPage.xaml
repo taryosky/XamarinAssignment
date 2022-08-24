@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AssignmentApp.ViewModels"
+             x:Class="AssignmentApp.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:MainPageVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add New User" x:Name="NewUserButton" Command="{Binding Source={StaticResource vm}, Path=GotToNewUserPageCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="0,10">
+            <StackLayout>
+                <Label Text="Users" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
+            </StackLayout>
+            <ListView SeparatorVisibility="None" BindingContext="{StaticResource vm}"
+                  ItemsSource="{Binding Users}" Margin="10"
+                      SelectedItem="{Binding SelectedCard}">
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="iOS, Android" Value="70" />
+                        <On Platform="UWP" Value="90" />
+                    </OnPlatform>
+                </ListView.RowHeight>
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <StackLayout Padding="0">
+                                <Frame CornerRadius="25" 
+                                       Padding="0"
+                                       IsClippedToBounds="True"
+                                       WidthRequest="55"
+                                       HeightRequest="55"
+                                       HasShadow="False">
+                                    <Image Source="{Binding Photo}" 
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" Aspect="Fill"/>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Name}" 
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding Address}" 
+                                       TextColor="Gray"/>
+                             </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+
+</ContentPage>
+

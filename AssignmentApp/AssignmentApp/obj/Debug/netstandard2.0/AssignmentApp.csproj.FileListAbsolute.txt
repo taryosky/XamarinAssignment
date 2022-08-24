@@ -1,0 +1,17 @@
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/bin/Debug/netstandard2.0/AssignmentApp.deps.json
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/bin/Debug/netstandard2.0/AssignmentApp.dll
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/bin/Debug/netstandard2.0/ref/AssignmentApp.dll
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/bin/Debug/netstandard2.0/AssignmentApp.pdb
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.csproj.AssemblyReference.cache
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/Pages/MyListViewPage.xaml.g.cs
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.AssemblyInfoInputs.cache
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.AssemblyInfo.cs
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.csproj.CoreCompileInputs.cache
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.dll
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/ref/AssignmentApp.dll
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/AssignmentApp.pdb
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/Pages/AddNewUserPage.xaml.g.cs
+/Users/taryosky/Documents/GitHub/AssignmentApp/AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/Pages/UserDetailsPage.xaml.g.cs
