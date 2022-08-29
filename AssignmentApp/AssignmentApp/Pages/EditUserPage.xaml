@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:AssignmentApp.ViewModels"
+    x:Class="AssignmentApp.Pages.EditUserPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:EditUserPageVM x:Key="vm" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10" BindingContext="{StaticResource vm}">
+            <StackLayout Margin="10" HorizontalOptions="Center">
+                <Label FontSize="23" Text="Update User"/>
+            </StackLayout>
+                <StackLayout>
+                    <Image Source="{Binding Photo}" HeightRequest="200" Aspect="AspectFit"/>
+                    <Button Text="Change Photo" Style="{StaticResource oBtn}" x:Name="selectImage" Command="{Binding SelectImageCommand}" Grid.Column="1" HorizontalOptions="Center"/>
+                    <Label Text="{Binding ProfilePic.FileName}" VerticalOptions="Center"/>
+                </StackLayout>
+
+            <StackLayout Margin="0,10">
+                <Label Text="Name"/>
+                <Entry x:Name="name" StyleClass="entry" Placeholder="Enter your name" Text="{Binding Name, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <StackLayout WidthRequest="100">
+                <Picker Title="Sex" SelectedItem="{Binding Sex, Mode=TwoWay}" WidthRequest="100">
+                    <Picker.Items>
+                       <x:String>Male</x:String>
+                       <x:String>Female</x:String>
+                    </Picker.Items>
+                 </Picker>
+            </StackLayout>
+
+            <StackLayout Margin="0,10">
+                <Label Text="Address"/>
+                <Entry x:Name="address" Placeholder="Enter your address" Text="{Binding Address, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <StackLayout Margin="0,10">
+                <Label Text="Phone Number"/>
+                <Entry x:Name="phone" Placeholder="Enter your phone number" Text="{Binding PhoneNumber, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <StackLayout Margin="0,10">
+                <Button x:Name="addUserButton" Style="{StaticResource mBtn}" Text="Create" Command="{Binding EditUserCommand}"/>
+            </StackLayout>
+        </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
