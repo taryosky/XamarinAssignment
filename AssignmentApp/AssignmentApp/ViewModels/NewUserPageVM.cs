@@ -4,6 +4,7 @@ using AssignmentApp.Models;
 using AssignmentApp.Helpers;
 using Xamarin.Essentials;
 using AssignmentApp.Pages;
+using Xamarin.Forms;
 
 namespace AssignmentApp.ViewModels
 {
@@ -13,7 +14,7 @@ namespace AssignmentApp.ViewModels
         private string _address;
         private string _phoneNumber;
         private string _sex;
-
+        private ImageSource _photo;
         private User _user;
 
         public Xamarin.Forms.Command AddNewUserCommand { get; set; }
@@ -25,6 +26,16 @@ namespace AssignmentApp.ViewModels
             set {
                 _user = value;
                 OnPropertyChanged("User");
+            }
+        }
+
+        public ImageSource Photo
+        {
+            get { return _photo; }
+            set
+            {
+                _photo = value;
+                OnPropertyChanged("Photo");
             }
         }
 
@@ -74,26 +85,27 @@ namespace AssignmentApp.ViewModels
 
         public NewUserPageVM()
         {
-            AddNewUserCommand = new Xamarin.Forms.Command(AddNewUser);
+            AddNewUserCommand = new Xamarin.Forms.Command(AddNewUser, CanAddNewUser);
             SelectImageCommand = new Xamarin.Forms.Command(ImageSelected);
             User = new User();
+            PropertyChanged += (_, __) => AddNewUserCommand.ChangeCanExecute();
         }
 
 
         private async void AddNewUser()
         {
-            if (!CanAddNewUser())
-            {
-                App.Current.MainPage.DisplayAlert("Error", "Please fill all fields currectly", "Ok");
-                return;
-            }
+            (string, string) uploadResult = (null, null);
 
-            var upload = await CloudinaryService.Upload(ProfilePic);
-            if(upload.Item1 == null)
+            if(ProfilePic != null)
             {
-                App.Current.MainPage.DisplayAlert("Error", "An error occured, please try again", "Ok");
-                return;
+                uploadResult = await CloudinaryService.Upload(ProfilePic);
+                if (uploadResult.Item1 == null)
+                {
+                    App.Current.MainPage.DisplayAlert("Error", "An error occured, please try again", "Ok");
+                    return;
+                }
             }
+            
 
             var user = new User
             {
@@ -103,8 +115,8 @@ namespace AssignmentApp.ViewModels
                 DateCreted = DateTime.Now,
                 DateUpdated = DateTime.MinValue,
                 Mobile = PhoneNumber,
-                ProfilePic = upload.Item1,
-                ImagePublicUrl = upload.Item2
+                ProfilePic = uploadResult.Item1,
+                PublicId = uploadResult.Item2
             };
 
             var isCreated = Db.Insert<User>(user);
@@ -121,16 +133,37 @@ namespace AssignmentApp.ViewModels
             bool emptyPhone = string.IsNullOrWhiteSpace(PhoneNumber);
             bool emptySex = string.IsNullOrWhiteSpace(Sex);
 
-            return !emptyName && !emptyAddress && !emptyPhone && ProfilePic != null && !emptySex;
+            return !emptyName && !emptyAddress && !emptyPhone && !emptySex;
         }
 
         private async void ImageSelected()
         {
-            FileResult imgPicker = await MediaPicker.PickPhotoAsync();
-            if (imgPicker == null)
-                return;
+            var fromGallery = await App.Current.MainPage.DisplayAlert("Choose Photo", "Select photo to upload", "Gallery", "Camera");
+            if (fromGallery)
+            {
+                FileResult imgPicker = await MediaPicker.PickPhotoAsync();
+                if (imgPicker == null)
+                    return;
 
-            ProfilePic = imgPicker;
+                ProfilePic = imgPicker;
+                Photo = ImageSource.FromStream(() => imgPicker.OpenReadAsync().GetAwaiter().GetResult());
+
+            }
+            else
+            {
+                if (!MediaPicker.IsCaptureSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("Not supportted", "Your device does not support camera", "Ok");
+                    return;
+                }
+
+                FileResult imgCapure = await MediaPicker.CapturePhotoAsync();
+                if (imgCapure == null)
+                    return;
+
+                ProfilePic = imgCapure;
+                Photo = ImageSource.FromStream(() => imgCapure.OpenReadAsync().GetAwaiter().GetResult());
+            }
         }
 
         private bool ValidateFields()

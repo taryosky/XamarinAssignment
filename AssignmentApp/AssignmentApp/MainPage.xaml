@@ -16,7 +16,7 @@
             <StackLayout>
                 <Label Text="Users" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
             </StackLayout>
-            <ListView SeparatorVisibility="None" BindingContext="{StaticResource vm}"
+            <ListView BindingContext="{StaticResource vm}"
                   ItemsSource="{Binding Users}" Margin="10"
                       SelectedItem="{Binding SelectedCard}">
                 <ListView.RowHeight>

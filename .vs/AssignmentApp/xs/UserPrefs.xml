@@ -1,37 +1,28 @@
 ﻿<Properties StartupConfiguration="{6DB8E394-5F13-472F-8F09-9463F826E927}|Default">
+  <MonoDevelop.Ide.ItemProperties.AssignmentApp.Android PreferredExecutionTarget="Android.pixel_5_-_api_31_1" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_31_1" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.AssignmentApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.54CA4452-F149-48D3-B958-66956D326F55" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AssignmentApp/AssignmentApp/MainPage.xaml">
-    <Files>
-      <File FileName="AssignmentApp/AssignmentApp/Assets/ApplicationStyles.css" Line="7" Column="1" />
-      <File FileName="AssignmentApp/AssignmentApp/Pages/AddNewUserPage.xaml" Line="28" Column="120" />
-      <File FileName="AssignmentApp/AssignmentApp/obj/Debug/netstandard2.0/Pages/AddNewUserPage.xaml.g.cs" Line="35" Column="59" />
-      <File FileName="AssignmentApp/AssignmentApp/ViewModels/NewUserPageVM.cs" Line="85" Column="1" />
-      <File FileName="AssignmentApp/AssignmentApp/Models/User.cs" Line="10" Column="49" />
-      <File FileName="AssignmentApp/AssignmentApp/Pages/AddNewUserPage.xaml.cs" Line="13" Column="1" />
-      <File FileName="AssignmentApp/AssignmentApp/ViewModels/MainPageVM.cs" Line="30" Column="1" />
-      <File FileName="AssignmentApp/AssignmentApp/Helpers/CloudinaryService.cs" Line="17" Column="1" />
-      <File FileName="AssignmentApp/AssignmentApp/Helpers/Db.cs" Line="48" Column="14" />
-      <File FileName="AssignmentApp/AssignmentApp/MainPage.xaml" Line="40" Column="64" />
-      <File FileName="AssignmentApp/AssignmentApp/Models/UserCard.cs" Line="7" Column="42" />
-      <File FileName="AssignmentApp/AssignmentApp/MainPage.xaml.cs" Line="26" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AssignmentApp" expanded="True">
             <Node name="AssignmentApp" expanded="True">
-              <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="AddNewUserPage.xaml" expanded="True" />
+                <Node name="EditUserPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModels" expanded="True" />
-              <Node name="MainPage.xaml" expanded="True" selected="True" />
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
+            <Node name="AssignmentApp.Android" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="MainActivity.cs" selected="True" />
+            </Node>
+            <Node name="AssignmentApp.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -40,10 +31,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.AssignmentApp.Android PreferredExecutionTarget="Android.pixel_5_-_api_31_1" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <Debugger.DebugSourceFolders>
     <String>/Users/taryosky/Library/Caches/VisualStudio/17.0/Symbols/raw.githubusercontent.com/mono/mono/dffa5ab92245f2419238a35b7c2052e9a24036b4</String>
   </Debugger.DebugSourceFolders>
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.0.0" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_31_1" />
 </Properties>

@@ -60,8 +60,12 @@
                         </FormattedString>
                      </Label.FormattedText>
                   </Label>
+                   
                </Grid>
             </Frame>
+             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Padding="25,10,25,0">
+                <Button x:Name="editUserButton" Style="{StaticResource mBtn}" HorizontalOptions="Start" WidthRequest="70" Text="Edit" Command="{Binding GoToEditUserCommand}"/>
+             </StackLayout>
          </StackLayout>
 
       </Grid>

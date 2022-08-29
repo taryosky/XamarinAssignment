@@ -15,7 +15,7 @@ namespace AssignmentApp.Models
         public string Address { get; set; }
         public string Mobile { get; set; }
         public string ProfilePic { get; set; }
-        public string ImagePublicUrl { get; set; }
+        public string PublicId { get; set; }
         public System.DateTime DateCreted { get; set; }
         public System.DateTime DateUpdated { get; set; }
     }

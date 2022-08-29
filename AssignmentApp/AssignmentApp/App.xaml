@@ -10,14 +10,17 @@
             <Setter Property="HasShadow"       Value="False" />
          </Style>
 
-        <Style x:Key="stlContactBtn" TargetType="Button">
-            <Setter Property="TranslationY"     Value="-20"/>
-            <Setter Property="TranslationX"     Value="45"/>
-            <Setter Property="BackgroundColor"  Value="#2193f3"/>
-            <Setter Property="WidthRequest"     Value="66"/>
-            <Setter Property="HeightRequest"    Value="66"/>
-            <Setter Property="CornerRadius"     Value="28"/>
+        <Style x:Key="mBtn" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="Fuschia"/>
+            <Setter Property="CornerRadius"     Value="10"/>
+            <Setter Property="TextColor" Value="White" />
          </Style>
+
+        <Style x:Key="oBtn" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="Transparent"/>
+            <Setter Property="TextColor" Value="Fuschia" />
+         </Style>
+
          <Style x:Key="stlBoardDesc" TargetType="Label">
             <Setter Property="FontAttributes"    Value="Bold"/>
             <Setter Property="FontSize"          Value="16" />

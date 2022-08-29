@@ -12,12 +12,14 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Margin="10" BindingContext="{StaticResource vm}">
+        <ScrollView>
+             <StackLayout Margin="10" BindingContext="{StaticResource vm}">
             <StackLayout Margin="10" HorizontalOptions="Center">
                 <Label FontSize="23" Text="New User"/>
             </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Select image" x:Name="selectImage" Command="{Binding SelectImageCommand}" Grid.Column="1" HorizontalOptions="Start"/>
+                <StackLayout>
+                    <Image Source="{Binding Photo}" HeightRequest="200" Aspect="AspectFit"/>
+                    <Button Text="Select image" Style="{StaticResource oBtn}" x:Name="selectImage" Command="{Binding SelectImageCommand}" Grid.Column="1" HorizontalOptions="Center"/>
                     <Label Text="{Binding ProfilePic.FileName}" VerticalOptions="Center"/>
                 </StackLayout>
                 
@@ -48,9 +50,11 @@
             </StackLayout>
 
             <StackLayout Margin="0,10">
-                <Button x:Name="addUserButton" Text="Create" Command="{Binding AddNewUserCommand}" BackgroundColor="Fuchsia"/>
+                <Button x:Name="addUserButton" Style="{StaticResource mBtn}" Text="Create" Command="{Binding AddNewUserCommand}"/>
             </StackLayout>
         </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
 
